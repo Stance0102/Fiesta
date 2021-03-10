@@ -1,0 +1,924 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DDB96E1B453609D36DF9403 /* Pods_FiestaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB4EA20442C2C0BCC65C858 /* Pods_FiestaTests.framework */; };
+		3473797D33FB892E968623CD /* Pods_Fiesta_FiestaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F4FCE93A0A6F8D73CFF324 /* Pods_Fiesta_FiestaUITests.framework */; };
+		D41A83542564158200C338CC /* _Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A83532564158100C338CC /* _Group.swift */; };
+		D41A83592565330B00C338CC /* Activity_SelectGroup_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A83582565330B00C338CC /* Activity_SelectGroup_View.swift */; };
+		D41A835E2565357400C338CC /* Activity_CreateActivity_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A835D2565357400C338CC /* Activity_CreateActivity_View.swift */; };
+		D41A8366256546ED00C338CC /* _Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A8365256546ED00C338CC /* _Tag.swift */; };
+		D41A836B25654C6800C338CC /* _ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A836A25654C6800C338CC /* _ImagePicker.swift */; };
+		D41A838A25654EA100C338CC /* _Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A838925654EA100C338CC /* _Coordinator.swift */; };
+		D420D131255BFD04009D0513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420D130255BFD04009D0513 /* AppDelegate.swift */; };
+		D420D133255BFD04009D0513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420D132255BFD04009D0513 /* SceneDelegate.swift */; };
+		D420D135255BFD04009D0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420D134255BFD04009D0513 /* ContentView.swift */; };
+		D420D137255BFD07009D0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D420D136255BFD07009D0513 /* Assets.xcassets */; };
+		D420D13A255BFD07009D0513 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D420D139255BFD07009D0513 /* Preview Assets.xcassets */; };
+		D420D13D255BFD07009D0513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D420D13B255BFD07009D0513 /* LaunchScreen.storyboard */; };
+		D420D148255BFD08009D0513 /* FiestaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420D147255BFD08009D0513 /* FiestaTests.swift */; };
+		D420D153255BFD08009D0513 /* FiestaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420D152255BFD08009D0513 /* FiestaUITests.swift */; };
+		D42EDFCE256861D1001D8B1B /* _Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EDFCD256861D1001D8B1B /* _Show.swift */; };
+		D42EDFDB256C4F00001D8B1B /* _Lotte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EDFDA256C4F00001D8B1B /* _Lotte.swift */; };
+		D43D245C256D37DF002EE082 /* _Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43D245B256D37DF002EE082 /* _Score.swift */; };
+		D49B008B255C66D3004E87EE /* Account_Login_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B008A255C66D3004E87EE /* Account_Login_View.swift */; };
+		D49B009E255C75E5004E87EE /* Menu_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B009D255C75E5004E87EE /* Menu_View.swift */; };
+		D49B00A6255C8BC0004E87EE /* Activity_Info_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */; };
+		D49B00AB255C8D79004E87EE /* _Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00AA255C8D79004E87EE /* _Ticket.swift */; };
+		D49B00B3255D509C004E87EE /* _Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00B2255D509C004E87EE /* _Account.swift */; };
+		D49B00CB255D64FF004E87EE /* Account_SignIn_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00CA255D64FF004E87EE /* Account_SignIn_View.swift */; };
+		D49B00DA255DB4E0004E87EE /* Account_LogOut_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00D9255DB4E0004E87EE /* Account_LogOut_View.swift */; };
+		D49B00DF255DCB42004E87EE /* Account_SchoolEmail_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00DE255DCB42004E87EE /* Account_SchoolEmail_View.swift */; };
+		D4A407E9255C14CA0059C2AF /* _Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A407E8255C14CA0059C2AF /* _Activity.swift */; };
+		D4BD66882563FD2F00A40743 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4BD66872563FD2F00A40743 /* GoogleService-Info.plist */; };
+		DE03BEE025F5F9A500EEF111 /* GenJyuuGothic-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDA25F5F99F00EEF111 /* GenJyuuGothic-Normal.ttf */; };
+		DE03BEE125F5F9A500EEF111 /* GenJyuuGothic-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDB25F5F9A000EEF111 /* GenJyuuGothic-ExtraLight.ttf */; };
+		DE03BEE225F5F9A500EEF111 /* GenJyuuGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDC25F5F9A100EEF111 /* GenJyuuGothic-Regular.ttf */; };
+		DE03BEE325F5F9A500EEF111 /* GenJyuuGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDD25F5F9A200EEF111 /* GenJyuuGothic-Medium.ttf */; };
+		DE03BEE425F5F9A500EEF111 /* GenJyuuGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDE25F5F9A300EEF111 /* GenJyuuGothic-Bold.ttf */; };
+		DE03BEE525F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */; };
+		DE03BF0025F719E000EEF111 /* Pods_Fiesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD182BBB366F3C4E097A93 /* Pods_Fiesta.framework */; };
+		DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */; };
+		DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D420D144255BFD08009D0513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D420D125255BFD03009D0513 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D420D12C255BFD04009D0513;
+			remoteInfo = Fiesta;
+		};
+		D420D14F255BFD08009D0513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D420D125255BFD03009D0513 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D420D12C255BFD04009D0513;
+			remoteInfo = Fiesta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08F4FCE93A0A6F8D73CFF324 /* Pods_Fiesta_FiestaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiesta_FiestaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB4EA20442C2C0BCC65C858 /* Pods_FiestaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiestaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F10C310F0DC6EA2F1B29B4 /* Pods-Fiesta-FiestaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiesta-FiestaUITests.release.xcconfig"; path = "Target Support Files/Pods-Fiesta-FiestaUITests/Pods-Fiesta-FiestaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5F948C30D80F86389DA6421E /* Pods-Fiesta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiesta.debug.xcconfig"; path = "Target Support Files/Pods-Fiesta/Pods-Fiesta.debug.xcconfig"; sourceTree = "<group>"; };
+		62E55004186059BDAB815CBF /* Pods-FiestaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiestaTests.debug.xcconfig"; path = "Target Support Files/Pods-FiestaTests/Pods-FiestaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D9A60975D2CC6F5B2DC59B8 /* Pods-Fiesta-FiestaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiesta-FiestaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fiesta-FiestaUITests/Pods-Fiesta-FiestaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2CD182BBB366F3C4E097A93 /* Pods_Fiesta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiesta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2EB1EFCF14C3C06E4980C96 /* Pods-FiestaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiestaTests.release.xcconfig"; path = "Target Support Files/Pods-FiestaTests/Pods-FiestaTests.release.xcconfig"; sourceTree = "<group>"; };
+		D41A83532564158100C338CC /* _Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Group.swift; sourceTree = "<group>"; };
+		D41A83582565330B00C338CC /* Activity_SelectGroup_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_SelectGroup_View.swift; sourceTree = "<group>"; };
+		D41A835D2565357400C338CC /* Activity_CreateActivity_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_CreateActivity_View.swift; sourceTree = "<group>"; };
+		D41A8365256546ED00C338CC /* _Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Tag.swift; sourceTree = "<group>"; };
+		D41A836A25654C6800C338CC /* _ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ImagePicker.swift; sourceTree = "<group>"; };
+		D41A838925654EA100C338CC /* _Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Coordinator.swift; sourceTree = "<group>"; };
+		D420D12D255BFD04009D0513 /* Fiesta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiesta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D420D130255BFD04009D0513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D420D132255BFD04009D0513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D420D134255BFD04009D0513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D420D136255BFD07009D0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D420D139255BFD07009D0513 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D420D13C255BFD07009D0513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D420D13E255BFD07009D0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D420D143255BFD08009D0513 /* FiestaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiestaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D420D147255BFD08009D0513 /* FiestaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiestaTests.swift; sourceTree = "<group>"; };
+		D420D149255BFD08009D0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D420D14E255BFD08009D0513 /* FiestaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiestaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D420D152255BFD08009D0513 /* FiestaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiestaUITests.swift; sourceTree = "<group>"; };
+		D420D154255BFD08009D0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D42EDFCD256861D1001D8B1B /* _Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Show.swift; sourceTree = "<group>"; };
+		D42EDFDA256C4F00001D8B1B /* _Lotte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Lotte.swift; sourceTree = "<group>"; };
+		D43D245B256D37DF002EE082 /* _Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Score.swift; sourceTree = "<group>"; };
+		D49B008A255C66D3004E87EE /* Account_Login_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_Login_View.swift; sourceTree = "<group>"; };
+		D49B009D255C75E5004E87EE /* Menu_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_View.swift; sourceTree = "<group>"; };
+		D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_Info_View.swift; sourceTree = "<group>"; };
+		D49B00AA255C8D79004E87EE /* _Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Ticket.swift; sourceTree = "<group>"; };
+		D49B00B2255D509C004E87EE /* _Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Account.swift; sourceTree = "<group>"; };
+		D49B00CA255D64FF004E87EE /* Account_SignIn_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_SignIn_View.swift; sourceTree = "<group>"; };
+		D49B00D5255D7152004E87EE /* Fiesta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fiesta.entitlements; sourceTree = "<group>"; };
+		D49B00D9255DB4E0004E87EE /* Account_LogOut_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_LogOut_View.swift; sourceTree = "<group>"; };
+		D49B00DE255DCB42004E87EE /* Account_SchoolEmail_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_SchoolEmail_View.swift; sourceTree = "<group>"; };
+		D4A407E8255C14CA0059C2AF /* _Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Activity.swift; sourceTree = "<group>"; };
+		D4BD66872563FD2F00A40743 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE03BEDA25F5F99F00EEF111 /* GenJyuuGothic-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Normal.ttf"; sourceTree = "<group>"; };
+		DE03BEDB25F5F9A000EEF111 /* GenJyuuGothic-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-ExtraLight.ttf"; sourceTree = "<group>"; };
+		DE03BEDC25F5F9A100EEF111 /* GenJyuuGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Regular.ttf"; sourceTree = "<group>"; };
+		DE03BEDD25F5F9A200EEF111 /* GenJyuuGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Medium.ttf"; sourceTree = "<group>"; };
+		DE03BEDE25F5F9A300EEF111 /* GenJyuuGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Bold.ttf"; sourceTree = "<group>"; };
+		DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Heavy.ttf"; sourceTree = "<group>"; };
+		DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_RealTime_VIew.swift; sourceTree = "<group>"; };
+		DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_Ticket_View.swift; sourceTree = "<group>"; };
+		DFC96FF12DB2A0C39138A571 /* Pods-Fiesta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiesta.release.xcconfig"; path = "Target Support Files/Pods-Fiesta/Pods-Fiesta.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D420D12A255BFD04009D0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE03BF0025F719E000EEF111 /* Pods_Fiesta.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D140255BFD08009D0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DDB96E1B453609D36DF9403 /* Pods_FiestaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D14B255BFD08009D0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3473797D33FB892E968623CD /* Pods_Fiesta_FiestaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABBBDDF1E82C8F95604EF8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2CD182BBB366F3C4E097A93 /* Pods_Fiesta.framework */,
+				08F4FCE93A0A6F8D73CFF324 /* Pods_Fiesta_FiestaUITests.framework */,
+				0AB4EA20442C2C0BCC65C858 /* Pods_FiestaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCF0C39AA796BC7F11387E7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F948C30D80F86389DA6421E /* Pods-Fiesta.debug.xcconfig */,
+				DFC96FF12DB2A0C39138A571 /* Pods-Fiesta.release.xcconfig */,
+				7D9A60975D2CC6F5B2DC59B8 /* Pods-Fiesta-FiestaUITests.debug.xcconfig */,
+				58F10C310F0DC6EA2F1B29B4 /* Pods-Fiesta-FiestaUITests.release.xcconfig */,
+				62E55004186059BDAB815CBF /* Pods-FiestaTests.debug.xcconfig */,
+				C2EB1EFCF14C3C06E4980C96 /* Pods-FiestaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D420D124255BFD03009D0513 = {
+			isa = PBXGroup;
+			children = (
+				D420D12F255BFD04009D0513 /* Fiesta */,
+				D420D146255BFD08009D0513 /* FiestaTests */,
+				D420D151255BFD08009D0513 /* FiestaUITests */,
+				D420D12E255BFD04009D0513 /* Products */,
+				BCF0C39AA796BC7F11387E7B /* Pods */,
+				ABBBDDF1E82C8F95604EF8C5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D420D12E255BFD04009D0513 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D420D12D255BFD04009D0513 /* Fiesta.app */,
+				D420D143255BFD08009D0513 /* FiestaTests.xctest */,
+				D420D14E255BFD08009D0513 /* FiestaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D420D12F255BFD04009D0513 /* Fiesta */ = {
+			isa = PBXGroup;
+			children = (
+				DE03BEDE25F5F9A300EEF111 /* GenJyuuGothic-Bold.ttf */,
+				DE03BEDB25F5F9A000EEF111 /* GenJyuuGothic-ExtraLight.ttf */,
+				DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */,
+				DE03BEDD25F5F9A200EEF111 /* GenJyuuGothic-Medium.ttf */,
+				DE03BEDA25F5F99F00EEF111 /* GenJyuuGothic-Normal.ttf */,
+				DE03BEDC25F5F9A100EEF111 /* GenJyuuGothic-Regular.ttf */,
+				D4BD66872563FD2F00A40743 /* GoogleService-Info.plist */,
+				D49B00D5255D7152004E87EE /* Fiesta.entitlements */,
+				D49B009C255C75CC004E87EE /* Menu */,
+				D49B0087255C6667004E87EE /* Account */,
+				D49B0088255C667D004E87EE /* Activity */,
+				D49B0089255C668C004E87EE /* Ticket */,
+				D42EDFD3256863D4001D8B1B /* FeedBack */,
+				D42EDFD425686417001D8B1B /* Lotte */,
+				D420D130255BFD04009D0513 /* AppDelegate.swift */,
+				D420D132255BFD04009D0513 /* SceneDelegate.swift */,
+				D420D134255BFD04009D0513 /* ContentView.swift */,
+				D420D136255BFD07009D0513 /* Assets.xcassets */,
+				D420D13B255BFD07009D0513 /* LaunchScreen.storyboard */,
+				D420D13E255BFD07009D0513 /* Info.plist */,
+				D420D138255BFD07009D0513 /* Preview Content */,
+			);
+			path = Fiesta;
+			sourceTree = "<group>";
+		};
+		D420D138255BFD07009D0513 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D420D139255BFD07009D0513 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D420D146255BFD08009D0513 /* FiestaTests */ = {
+			isa = PBXGroup;
+			children = (
+				D420D147255BFD08009D0513 /* FiestaTests.swift */,
+				D420D149255BFD08009D0513 /* Info.plist */,
+			);
+			path = FiestaTests;
+			sourceTree = "<group>";
+		};
+		D420D151255BFD08009D0513 /* FiestaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D420D152255BFD08009D0513 /* FiestaUITests.swift */,
+				D420D154255BFD08009D0513 /* Info.plist */,
+			);
+			path = FiestaUITests;
+			sourceTree = "<group>";
+		};
+		D42EDFD3256863D4001D8B1B /* FeedBack */ = {
+			isa = PBXGroup;
+			children = (
+				D43D245B256D37DF002EE082 /* _Score.swift */,
+			);
+			name = FeedBack;
+			sourceTree = "<group>";
+		};
+		D42EDFD425686417001D8B1B /* Lotte */ = {
+			isa = PBXGroup;
+			children = (
+				D42EDFDA256C4F00001D8B1B /* _Lotte.swift */,
+			);
+			name = Lotte;
+			sourceTree = "<group>";
+		};
+		D49B0087255C6667004E87EE /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D49B008A255C66D3004E87EE /* Account_Login_View.swift */,
+				D49B00D9255DB4E0004E87EE /* Account_LogOut_View.swift */,
+				D49B00DE255DCB42004E87EE /* Account_SchoolEmail_View.swift */,
+				D49B00CA255D64FF004E87EE /* Account_SignIn_View.swift */,
+				D49B00B2255D509C004E87EE /* _Account.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		D49B0088255C667D004E87EE /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */,
+				DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */,
+				DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */,
+				D41A83582565330B00C338CC /* Activity_SelectGroup_View.swift */,
+				D41A835D2565357400C338CC /* Activity_CreateActivity_View.swift */,
+				D4A407E8255C14CA0059C2AF /* _Activity.swift */,
+				D41A83532564158100C338CC /* _Group.swift */,
+				D41A8365256546ED00C338CC /* _Tag.swift */,
+				D41A836A25654C6800C338CC /* _ImagePicker.swift */,
+				D41A838925654EA100C338CC /* _Coordinator.swift */,
+				D42EDFCD256861D1001D8B1B /* _Show.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		D49B0089255C668C004E87EE /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				D49B00AA255C8D79004E87EE /* _Ticket.swift */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		D49B009C255C75CC004E87EE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D49B009D255C75E5004E87EE /* Menu_View.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D420D12C255BFD04009D0513 /* Fiesta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D420D157255BFD08009D0513 /* Build configuration list for PBXNativeTarget "Fiesta" */;
+			buildPhases = (
+				6E5323DF4CABEC7B8678F3D6 /* [CP] Check Pods Manifest.lock */,
+				D420D129255BFD04009D0513 /* Sources */,
+				D420D12A255BFD04009D0513 /* Frameworks */,
+				D420D12B255BFD04009D0513 /* Resources */,
+				50A6905B3E4A64F117AA6996 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fiesta;
+			productName = Fiesta;
+			productReference = D420D12D255BFD04009D0513 /* Fiesta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D420D142255BFD08009D0513 /* FiestaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D420D15A255BFD08009D0513 /* Build configuration list for PBXNativeTarget "FiestaTests" */;
+			buildPhases = (
+				095353DA43197E00F0606BC8 /* [CP] Check Pods Manifest.lock */,
+				D420D13F255BFD08009D0513 /* Sources */,
+				D420D140255BFD08009D0513 /* Frameworks */,
+				D420D141255BFD08009D0513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D420D145255BFD08009D0513 /* PBXTargetDependency */,
+			);
+			name = FiestaTests;
+			productName = FiestaTests;
+			productReference = D420D143255BFD08009D0513 /* FiestaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D420D14D255BFD08009D0513 /* FiestaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D420D15D255BFD08009D0513 /* Build configuration list for PBXNativeTarget "FiestaUITests" */;
+			buildPhases = (
+				8899C501786C02E7B44809DA /* [CP] Check Pods Manifest.lock */,
+				D420D14A255BFD08009D0513 /* Sources */,
+				D420D14B255BFD08009D0513 /* Frameworks */,
+				D420D14C255BFD08009D0513 /* Resources */,
+				BF59D34BA71CDCAA31044AF1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D420D150255BFD08009D0513 /* PBXTargetDependency */,
+			);
+			name = FiestaUITests;
+			productName = FiestaUITests;
+			productReference = D420D14E255BFD08009D0513 /* FiestaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D420D125255BFD03009D0513 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					D420D12C255BFD04009D0513 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					D420D142255BFD08009D0513 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D420D12C255BFD04009D0513;
+					};
+					D420D14D255BFD08009D0513 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D420D12C255BFD04009D0513;
+					};
+				};
+			};
+			buildConfigurationList = D420D128255BFD03009D0513 /* Build configuration list for PBXProject "Fiesta" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D420D124255BFD03009D0513;
+			productRefGroup = D420D12E255BFD04009D0513 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D420D12C255BFD04009D0513 /* Fiesta */,
+				D420D142255BFD08009D0513 /* FiestaTests */,
+				D420D14D255BFD08009D0513 /* FiestaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D420D12B255BFD04009D0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE03BEE125F5F9A500EEF111 /* GenJyuuGothic-ExtraLight.ttf in Resources */,
+				D420D13D255BFD07009D0513 /* LaunchScreen.storyboard in Resources */,
+				D4BD66882563FD2F00A40743 /* GoogleService-Info.plist in Resources */,
+				DE03BEE225F5F9A500EEF111 /* GenJyuuGothic-Regular.ttf in Resources */,
+				D420D13A255BFD07009D0513 /* Preview Assets.xcassets in Resources */,
+				DE03BEE425F5F9A500EEF111 /* GenJyuuGothic-Bold.ttf in Resources */,
+				DE03BEE025F5F9A500EEF111 /* GenJyuuGothic-Normal.ttf in Resources */,
+				D420D137255BFD07009D0513 /* Assets.xcassets in Resources */,
+				DE03BEE525F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf in Resources */,
+				DE03BEE325F5F9A500EEF111 /* GenJyuuGothic-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D141255BFD08009D0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D14C255BFD08009D0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		095353DA43197E00F0606BC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FiestaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50A6905B3E4A64F117AA6996 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiesta/Pods-Fiesta-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiesta/Pods-Fiesta-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fiesta/Pods-Fiesta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E5323DF4CABEC7B8678F3D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fiesta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8899C501786C02E7B44809DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fiesta-FiestaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF59D34BA71CDCAA31044AF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiesta-FiestaUITests/Pods-Fiesta-FiestaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiesta-FiestaUITests/Pods-Fiesta-FiestaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fiesta-FiestaUITests/Pods-Fiesta-FiestaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D420D129255BFD04009D0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D41A8366256546ED00C338CC /* _Tag.swift in Sources */,
+				D41A83542564158200C338CC /* _Group.swift in Sources */,
+				D420D131255BFD04009D0513 /* AppDelegate.swift in Sources */,
+				D420D133255BFD04009D0513 /* SceneDelegate.swift in Sources */,
+				D43D245C256D37DF002EE082 /* _Score.swift in Sources */,
+				D41A835E2565357400C338CC /* Activity_CreateActivity_View.swift in Sources */,
+				D41A836B25654C6800C338CC /* _ImagePicker.swift in Sources */,
+				D49B00CB255D64FF004E87EE /* Account_SignIn_View.swift in Sources */,
+				D49B00A6255C8BC0004E87EE /* Activity_Info_View.swift in Sources */,
+				D49B00AB255C8D79004E87EE /* _Ticket.swift in Sources */,
+				D4A407E9255C14CA0059C2AF /* _Activity.swift in Sources */,
+				D41A838A25654EA100C338CC /* _Coordinator.swift in Sources */,
+				D49B009E255C75E5004E87EE /* Menu_View.swift in Sources */,
+				D420D135255BFD04009D0513 /* ContentView.swift in Sources */,
+				D42EDFDB256C4F00001D8B1B /* _Lotte.swift in Sources */,
+				D49B00B3255D509C004E87EE /* _Account.swift in Sources */,
+				D42EDFCE256861D1001D8B1B /* _Show.swift in Sources */,
+				DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */,
+				DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */,
+				D49B00DA255DB4E0004E87EE /* Account_LogOut_View.swift in Sources */,
+				D41A83592565330B00C338CC /* Activity_SelectGroup_View.swift in Sources */,
+				D49B008B255C66D3004E87EE /* Account_Login_View.swift in Sources */,
+				D49B00DF255DCB42004E87EE /* Account_SchoolEmail_View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D13F255BFD08009D0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D420D148255BFD08009D0513 /* FiestaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D420D14A255BFD08009D0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D420D153255BFD08009D0513 /* FiestaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D420D145255BFD08009D0513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D420D12C255BFD04009D0513 /* Fiesta */;
+			targetProxy = D420D144255BFD08009D0513 /* PBXContainerItemProxy */;
+		};
+		D420D150255BFD08009D0513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D420D12C255BFD04009D0513 /* Fiesta */;
+			targetProxy = D420D14F255BFD08009D0513 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D420D13B255BFD07009D0513 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D420D13C255BFD07009D0513 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D420D155255BFD08009D0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		D420D156255BFD08009D0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		D420D158255BFD08009D0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F948C30D80F86389DA6421E /* Pods-Fiesta.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fiesta/Fiesta.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fiesta/Preview Content\"";
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Fiesta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.Fiesta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D420D159255BFD08009D0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFC96FF12DB2A0C39138A571 /* Pods-Fiesta.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fiesta/Fiesta.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fiesta/Preview Content\"";
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Fiesta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.Fiesta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D420D15B255BFD08009D0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62E55004186059BDAB815CBF /* Pods-FiestaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				INFOPLIST_FILE = FiestaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.FiestaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fiesta.app/Fiesta";
+			};
+			name = Debug;
+		};
+		D420D15C255BFD08009D0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2EB1EFCF14C3C06E4980C96 /* Pods-FiestaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				INFOPLIST_FILE = FiestaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.FiestaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fiesta.app/Fiesta";
+			};
+			name = Release;
+		};
+		D420D15E255BFD08009D0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D9A60975D2CC6F5B2DC59B8 /* Pods-Fiesta-FiestaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				INFOPLIST_FILE = FiestaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.FiestaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fiesta;
+			};
+			name = Debug;
+		};
+		D420D15F255BFD08009D0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58F10C310F0DC6EA2F1B29B4 /* Pods-Fiesta-FiestaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RPMV574PZW;
+				INFOPLIST_FILE = FiestaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inc.FiestaNetwork.FiestaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fiesta;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D420D128255BFD03009D0513 /* Build configuration list for PBXProject "Fiesta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D420D155255BFD08009D0513 /* Debug */,
+				D420D156255BFD08009D0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D420D157255BFD08009D0513 /* Build configuration list for PBXNativeTarget "Fiesta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D420D158255BFD08009D0513 /* Debug */,
+				D420D159255BFD08009D0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D420D15A255BFD08009D0513 /* Build configuration list for PBXNativeTarget "FiestaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D420D15B255BFD08009D0513 /* Debug */,
+				D420D15C255BFD08009D0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D420D15D255BFD08009D0513 /* Build configuration list for PBXNativeTarget "FiestaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D420D15E255BFD08009D0513 /* Debug */,
+				D420D15F255BFD08009D0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D420D125255BFD03009D0513 /* Project object */;
+}

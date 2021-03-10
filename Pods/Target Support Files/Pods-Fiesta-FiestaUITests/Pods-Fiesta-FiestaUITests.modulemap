@@ -1,0 +1,6 @@
+framework module Pods_Fiesta_FiestaUITests {
+  umbrella header "Pods-Fiesta-FiestaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
