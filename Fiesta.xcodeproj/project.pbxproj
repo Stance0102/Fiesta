@@ -27,7 +27,6 @@
 		D42EDFDB256C4F00001D8B1B /* _Lotte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EDFDA256C4F00001D8B1B /* _Lotte.swift */; };
 		D43D245C256D37DF002EE082 /* _Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43D245B256D37DF002EE082 /* _Score.swift */; };
 		D49B008B255C66D3004E87EE /* Account_Login_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B008A255C66D3004E87EE /* Account_Login_View.swift */; };
-		D49B009E255C75E5004E87EE /* Menu_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B009D255C75E5004E87EE /* Menu_View.swift */; };
 		D49B00A6255C8BC0004E87EE /* Activity_Info_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */; };
 		D49B00AB255C8D79004E87EE /* _Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00AA255C8D79004E87EE /* _Ticket.swift */; };
 		D49B00B3255D509C004E87EE /* _Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B00B2255D509C004E87EE /* _Account.swift */; };
@@ -45,6 +44,15 @@
 		DE03BF0025F719E000EEF111 /* Pods_Fiesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD182BBB366F3C4E097A93 /* Pods_Fiesta.framework */; };
 		DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */; };
 		DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */; };
+		DEC910A2261CEB3D009DE47E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC910A1261CEB3D009DE47E /* AccountService.swift */; };
+		DEC910A7261CEF44009DE47E /* Account_Login_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC910A6261CEF44009DE47E /* Account_Login_ViewModel.swift */; };
+		DEE49BF42613A02300D7FC55 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49BF32613A02300D7FC55 /* Parsing.swift */; };
+		DEE49BFC2613A27000D7FC55 /* Activity_Index_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49BFB2613A27000D7FC55 /* Activity_Index_ViewModel.swift */; };
+		DEE49C012613A2CD00D7FC55 /* Activity_Index_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49C002613A2CD00D7FC55 /* Activity_Index_View.swift */; };
+		DEE49C0626141E7C00D7FC55 /* Array+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49C0526141E7C00D7FC55 /* Array+Filtering.swift */; };
+		DEE49C102614220700D7FC55 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49C0F2614220700D7FC55 /* Formatter.swift */; };
+		DEE49C1526147F5300D7FC55 /* Activity_Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49C1426147F5300D7FC55 /* Activity_Block.swift */; };
+		DEE49C1D261B731400D7FC55 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE49C1C261B731400D7FC55 /* ActivityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +105,6 @@
 		D42EDFDA256C4F00001D8B1B /* _Lotte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Lotte.swift; sourceTree = "<group>"; };
 		D43D245B256D37DF002EE082 /* _Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Score.swift; sourceTree = "<group>"; };
 		D49B008A255C66D3004E87EE /* Account_Login_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_Login_View.swift; sourceTree = "<group>"; };
-		D49B009D255C75E5004E87EE /* Menu_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_View.swift; sourceTree = "<group>"; };
 		D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_Info_View.swift; sourceTree = "<group>"; };
 		D49B00AA255C8D79004E87EE /* _Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Ticket.swift; sourceTree = "<group>"; };
 		D49B00B2255D509C004E87EE /* _Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Account.swift; sourceTree = "<group>"; };
@@ -115,6 +122,15 @@
 		DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_RealTime_VIew.swift; sourceTree = "<group>"; };
 		DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_Ticket_View.swift; sourceTree = "<group>"; };
+		DEC910A1261CEB3D009DE47E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		DEC910A6261CEF44009DE47E /* Account_Login_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_Login_ViewModel.swift; sourceTree = "<group>"; };
+		DEE49BF32613A02300D7FC55 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		DEE49BFB2613A27000D7FC55 /* Activity_Index_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_Index_ViewModel.swift; sourceTree = "<group>"; };
+		DEE49C002613A2CD00D7FC55 /* Activity_Index_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_Index_View.swift; sourceTree = "<group>"; };
+		DEE49C0526141E7C00D7FC55 /* Array+Filtering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Filtering.swift"; sourceTree = "<group>"; };
+		DEE49C0F2614220700D7FC55 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		DEE49C1426147F5300D7FC55 /* Activity_Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity_Block.swift; sourceTree = "<group>"; };
+		DEE49C1C261B731400D7FC55 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		DFC96FF12DB2A0C39138A571 /* Pods-Fiesta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiesta.release.xcconfig"; path = "Target Support Files/Pods-Fiesta/Pods-Fiesta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +210,7 @@
 		D420D12F255BFD04009D0513 /* Fiesta */ = {
 			isa = PBXGroup;
 			children = (
+				DEE49BF226139FFA00D7FC55 /* Utilities */,
 				DE03BEDE25F5F9A300EEF111 /* GenJyuuGothic-Bold.ttf */,
 				DE03BEDB25F5F9A000EEF111 /* GenJyuuGothic-ExtraLight.ttf */,
 				DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */,
@@ -202,12 +219,12 @@
 				DE03BEDC25F5F9A100EEF111 /* GenJyuuGothic-Regular.ttf */,
 				D4BD66872563FD2F00A40743 /* GoogleService-Info.plist */,
 				D49B00D5255D7152004E87EE /* Fiesta.entitlements */,
-				D49B009C255C75CC004E87EE /* Menu */,
 				D49B0087255C6667004E87EE /* Account */,
 				D49B0088255C667D004E87EE /* Activity */,
 				D49B0089255C668C004E87EE /* Ticket */,
 				D42EDFD3256863D4001D8B1B /* FeedBack */,
 				D42EDFD425686417001D8B1B /* Lotte */,
+				DEE49BEA2613981100D7FC55 /* Models */,
 				D420D130255BFD04009D0513 /* AppDelegate.swift */,
 				D420D132255BFD04009D0513 /* SceneDelegate.swift */,
 				D420D134255BFD04009D0513 /* ContentView.swift */,
@@ -269,6 +286,7 @@
 				D49B00DE255DCB42004E87EE /* Account_SchoolEmail_View.swift */,
 				D49B00CA255D64FF004E87EE /* Account_SignIn_View.swift */,
 				D49B00B2255D509C004E87EE /* _Account.swift */,
+				DEC910A6261CEF44009DE47E /* Account_Login_ViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -276,7 +294,6 @@
 		D49B0088255C667D004E87EE /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */,
 				DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */,
 				DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */,
 				D41A83582565330B00C338CC /* Activity_SelectGroup_View.swift */,
@@ -287,6 +304,10 @@
 				D41A836A25654C6800C338CC /* _ImagePicker.swift */,
 				D41A838925654EA100C338CC /* _Coordinator.swift */,
 				D42EDFCD256861D1001D8B1B /* _Show.swift */,
+				DEE49BFB2613A27000D7FC55 /* Activity_Index_ViewModel.swift */,
+				DEE49C002613A2CD00D7FC55 /* Activity_Index_View.swift */,
+				D49B00A5255C8BC0004E87EE /* Activity_Info_View.swift */,
+				DEE49C1426147F5300D7FC55 /* Activity_Block.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -299,12 +320,23 @@
 			path = Ticket;
 			sourceTree = "<group>";
 		};
-		D49B009C255C75CC004E87EE /* Menu */ = {
+		DEE49BEA2613981100D7FC55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D49B009D255C75E5004E87EE /* Menu_View.swift */,
+				DEE49C1C261B731400D7FC55 /* ActivityService.swift */,
+				DEC910A1261CEB3D009DE47E /* AccountService.swift */,
 			);
-			path = Menu;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEE49BF226139FFA00D7FC55 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DEE49BF32613A02300D7FC55 /* Parsing.swift */,
+				DEE49C0526141E7C00D7FC55 /* Array+Filtering.swift */,
+				DEE49C0F2614220700D7FC55 /* Formatter.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,9 +584,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE49C102614220700D7FC55 /* Formatter.swift in Sources */,
+				DEE49BF42613A02300D7FC55 /* Parsing.swift in Sources */,
 				D41A8366256546ED00C338CC /* _Tag.swift in Sources */,
 				D41A83542564158200C338CC /* _Group.swift in Sources */,
 				D420D131255BFD04009D0513 /* AppDelegate.swift in Sources */,
+				DEE49C012613A2CD00D7FC55 /* Activity_Index_View.swift in Sources */,
 				D420D133255BFD04009D0513 /* SceneDelegate.swift in Sources */,
 				D43D245C256D37DF002EE082 /* _Score.swift in Sources */,
 				D41A835E2565357400C338CC /* Activity_CreateActivity_View.swift in Sources */,
@@ -562,16 +597,21 @@
 				D49B00CB255D64FF004E87EE /* Account_SignIn_View.swift in Sources */,
 				D49B00A6255C8BC0004E87EE /* Activity_Info_View.swift in Sources */,
 				D49B00AB255C8D79004E87EE /* _Ticket.swift in Sources */,
+				DEC910A2261CEB3D009DE47E /* AccountService.swift in Sources */,
 				D4A407E9255C14CA0059C2AF /* _Activity.swift in Sources */,
+				DEE49C1526147F5300D7FC55 /* Activity_Block.swift in Sources */,
+				DEC910A7261CEF44009DE47E /* Account_Login_ViewModel.swift in Sources */,
 				D41A838A25654EA100C338CC /* _Coordinator.swift in Sources */,
-				D49B009E255C75E5004E87EE /* Menu_View.swift in Sources */,
+				DEE49BFC2613A27000D7FC55 /* Activity_Index_ViewModel.swift in Sources */,
 				D420D135255BFD04009D0513 /* ContentView.swift in Sources */,
 				D42EDFDB256C4F00001D8B1B /* _Lotte.swift in Sources */,
 				D49B00B3255D509C004E87EE /* _Account.swift in Sources */,
 				D42EDFCE256861D1001D8B1B /* _Show.swift in Sources */,
+				DEE49C0626141E7C00D7FC55 /* Array+Filtering.swift in Sources */,
 				DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */,
 				DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */,
 				D49B00DA255DB4E0004E87EE /* Account_LogOut_View.swift in Sources */,
+				DEE49C1D261B731400D7FC55 /* ActivityService.swift in Sources */,
 				D41A83592565330B00C338CC /* Activity_SelectGroup_View.swift in Sources */,
 				D49B008B255C66D3004E87EE /* Account_Login_View.swift in Sources */,
 				D49B00DF255DCB42004E87EE /* Account_SchoolEmail_View.swift in Sources */,
@@ -672,7 +712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -728,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -752,7 +792,7 @@
 				DEVELOPMENT_TEAM = RPMV574PZW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fiesta/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -778,7 +818,7 @@
 				DEVELOPMENT_TEAM = RPMV574PZW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fiesta/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

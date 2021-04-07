@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Menu_View: View {
-    @ObservedObject private var Account_Cls = Account()
+    @ObservedObject private var viewModel = Account_Login_ViewModel()
     @Environment(\.presentationMode) var presentationMode
     init() {
         UITableView.appearance().separatorStyle = .none
@@ -30,16 +30,16 @@ struct Menu_View: View {
                             Spacer()
                         }
                         HStack {
-                            if UserDefaults.standard.value(forKey: "UserName") != nil {
-                                Text(UserDefaults.standard.value(forKey: "UserName") as! String)
-                                    .foregroundColor(Color.black)
-                                    .font(Font.system(size: 20))
-                                    .bold()
-                            } else {
+                            if viewModel.accountViewModel.isEmpty
+                            {
                                 Text("點擊以登入")
                                     .foregroundColor(Color.black)
                                     .font(Font.system(size: 20))
                                     .bold()
+                            }
+                            else
+                            {
+                                Account_Menu_Section
                             }
                             Spacer()
                         }
@@ -57,18 +57,18 @@ struct Menu_View: View {
                         }
                         .padding(.bottom, 15)
                     }
-                    if UserDefaults.standard.value(forKey: "AuthID") == nil {
+                    if viewModel.accountViewModel .isEmpty {
                         NavigationLink(destination: Account_Login_View()) {
                             EmptyView()
                         }
                     } else {
-                        NavigationLink(destination: Account_LogOut_View()) {
+                        NavigationLink(destination: Activity_Index_View()) {
                             EmptyView()
                         }
                     }
                 }
 
-                NavigationLink(destination: Activity_SelectGroup_View()) {
+                NavigationLink(destination: EmptyView()) {
                     VStack {
                         HStack {
                             Image("Add")
@@ -87,7 +87,7 @@ struct Menu_View: View {
                     }
                 }
 
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: EmptyView()) {
                     VStack {
                         HStack {
                             Image(systemName: "doc.text.magnifyingglass")
@@ -105,7 +105,7 @@ struct Menu_View: View {
                     }
                 }
 
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: EmptyView()) {
                     VStack {
                         HStack {
                             Image("Heart")
@@ -143,7 +143,7 @@ struct Menu_View: View {
                     }
                 }
 
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: EmptyView()) {
                     VStack {
                         HStack {
                             Image("Setting")
@@ -172,5 +172,15 @@ struct Menu_View: View {
 struct Menu_View_Previews: PreviewProvider {
     static var previews: some View {
         Menu_View()
+    }
+}
+
+private extension Menu_View
+{
+    var Account_Menu_Section: some View {
+        Text(viewModel.accountViewModel[0].UserName)
+            .foregroundColor(Color.black)
+            .font(Font.system(size: 20))
+            .bold()
     }
 }

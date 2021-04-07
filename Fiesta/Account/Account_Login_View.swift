@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct Account_Login_View: View {
-    @State var UserName: String = ""
+    @State var UserId: String = ""
     @State var Password: String = ""
     @State private var ShowAlert = false
-    @ObservedObject private var Account_Cls = Account()
+    @ObservedObject var viewModel = Account_Login_ViewModel()
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -20,7 +20,7 @@ struct Account_Login_View: View {
                 Spacer()
                 VStack {
                     Spacer()
-                    TextField("帳號", text: $UserName)
+                    TextField("帳號", text: $UserId)
                         .frame(width: 250, height: 40)
                         .multilineTextAlignment(.center)
                         .overlay(
@@ -40,7 +40,14 @@ struct Account_Login_View: View {
                         .padding(.bottom, 20)
 
                     Button(action: {
-                        self.ShowAlert = true
+                        if self.UserId != "" && self.Password != ""
+                        {
+                            self.viewModel.fetch_Account(UserId: self.UserId, Password: self.Password)
+                        }
+                        else
+                        {
+                            self.ShowAlert = true
+                        }
                     }) {
                         Text("登入")
                             .frame(width: 250, height: 40)
@@ -53,17 +60,7 @@ struct Account_Login_View: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     .alert(isPresented: $ShowAlert) { () -> Alert in
-                        let result: String
-
-                        if self.UserName != "" && self.Password != "" {
-                            Account_Cls.Post_Login_JSON(UserId: self.UserName, Password: self.Password)
-                            result = "登入成功！"
-                            self.presentationMode.wrappedValue.dismiss()
-                        } else {
-                            result = "請填入帳號及密碼歐！"
-                        }
-
-                        return Alert(title: Text(result))
+                        return Alert(title: Text("帳號和密碼不得為空喔！"))
                     }
 
                     NavigationLink(destination: EmptyView() /* School_Email_View() */ ) {

@@ -94,7 +94,7 @@ class Show_Cls {
     func Select_Show(_ Act_Id: String) {
         let url = URL(string: "http://163.18.42.222:8888/Fiestadb/Show/Select")!
         var json: [String: Any] = [
-            "act_Id": Act_Id,
+            "act_Id": Act_Id
         ]
 
         let headers: HTTPHeaders = [
