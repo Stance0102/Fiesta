@@ -10,6 +10,7 @@ import SwiftUI
 struct Activity_Info_View: View {
     @ObservedObject private var TicketKind = Ticket()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @GestureState private var dragOffset = CGSize.zero
     @State private var HeartFill = false
     private let act_ViewModel: Activity_ViewModel
     
@@ -34,7 +35,7 @@ struct Activity_Info_View: View {
 //                Spacer()
 //            }
 //        }
-                
+        
         ScrollView(.vertical, showsIndicators: false) {
             GeometryReader { reader in
                 if reader.frame(in: .global).minY > -480 {
@@ -136,6 +137,11 @@ struct Activity_Info_View: View {
             .offset(y: -35)
         }
         .edgesIgnoringSafeArea(.all)
+        .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
+            if(value.startLocation.x < 100 && value.translation.width > 100) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }))
         .navigationBarTitle(act_ViewModel.Name)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(true)

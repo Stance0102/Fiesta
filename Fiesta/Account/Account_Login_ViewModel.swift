@@ -12,10 +12,12 @@ class Account_Login_ViewModel: ObservableObject
 {
     private let fiestaService = AccountService()
     @Published var accountViewModel: [Account_ViewModel] = []
+    @Published var accountStatus: [Account_Status] = []
     @Published var UserId: String = ""
     @Published var Password: String = ""
-//    @Published var arrayJson: [String] = []
+    @Published var StatusMsg: String = ""
     var cancellable: AnyCancellable?
+    var cancelUpdate = Set<AnyCancellable>()
     
 //    Fetch Recommend Activity
     func fetch_Account(UserId userId: String, Password password: String)
@@ -26,6 +28,7 @@ class Account_Login_ViewModel: ObservableObject
         ]
         
         cancellable = fiestaService.fetch_Account(JSON: json, Path: "/Account/select")
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { value in
                 switch value {
                 case .finished :
@@ -34,13 +37,60 @@ class Account_Login_ViewModel: ObservableObject
                     print("Ganlinniagby by:\(error.localizedDescription)")
                 }
             },
-            receiveValue: { fiestaContainer in
-                    print(fiestaContainer.code)
-                    print(fiestaContainer.result)
-                    self.accountViewModel = fiestaContainer.result.map { Account_ViewModel($0!) }
-                    print(self.accountViewModel)
+            receiveValue: { [weak self] fiestaContainer in
+                guard let self = self else
+                {
+                    return
+                }
+                
+                self.accountStatus.removeAll()
+                self.accountStatus.insert((Account_Status(DataContainer_Account(code: fiestaContainer.code, result: fiestaContainer.result))), at: 0)
+                
+                switch(self.accountStatus[0].StatusCode)
+                {
+                    case "001":
+                        self.accountViewModel = fiestaContainer.result.map { Account_ViewModel($0!) }
+                        self.StatusMsg = ""
+                    case "002":
+                        self.StatusMsg = "帳號或密碼錯誤"
+                    case "003":
+                        self.StatusMsg = "帳號或密碼錯誤"
+                    default:
+                        break
+                }
+                
+                print(self.StatusMsg)
             }
         )
+    }
+    
+    private var StatusUpdate: AnyPublisher<String, Never>
+    {
+        $StatusMsg
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { $0 }
+            .eraseToAnyPublisher()
+    }
+    
+    init() {
+        StatusUpdate
+            .receive(on: RunLoop.main)
+            .assign(to: \.StatusMsg, on: self)
+            .store(in: &cancelUpdate)
+    }
+}
+
+struct Account_Status: Hashable {
+    private let account_Status: DataContainer_Account
+    
+    var StatusCode: String {
+        return account_Status.code
+    }
+    
+    init(_ account_Status: DataContainer_Account)
+    {
+        self.account_Status = account_Status
     }
 }
 
@@ -48,15 +98,15 @@ struct Account_ViewModel: Hashable {
     private let account: Account
     
     var Id: String {
-        return account.Id
+        return account.Id!
     }
     
     var UserId: String {
-        return account.userId
+        return account.userId!
     }
     
     var UserName: String {
-        return account.userName
+        return account.userName!
     }
     
     var NickName: String {
@@ -92,7 +142,7 @@ struct Account_ViewModel: Hashable {
     }
     
     var Mail_1: String {
-        return account.Mail_1
+        return account.Mail_1!
     }
     
     var Mail_2: String {

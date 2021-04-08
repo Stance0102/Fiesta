@@ -20,6 +20,7 @@ class Activity_Info_ViewModel: ObservableObject
     func fetch_Activity()
     {
         cancellable = fiestaService.fetch_Activity(JSON: json, Path: "/Activity/getRecommend")
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { value in
                 switch value {
                 case .finished :
@@ -28,11 +29,14 @@ class Activity_Info_ViewModel: ObservableObject
                     print("Ganlinniagby by:\(error.localizedDescription)")
                 }
             },
-            receiveValue: { fiestaContainer in
-                    print(fiestaContainer.code)
-                    print(fiestaContainer.result)
-                    self.activityViewModel = fiestaContainer.result.map { Activity_ViewModel($0!) }
-                    print(self.activityViewModel)
+            receiveValue: { [weak self] fiestaContainer in
+                guard let self = self else {
+                    return
+                }
+                print(fiestaContainer.code)
+                print(fiestaContainer.result)
+                self.activityViewModel = fiestaContainer.result.map { Activity_ViewModel($0!) }
+                print(self.activityViewModel)
             }
         )
     }
