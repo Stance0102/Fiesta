@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Activity_Info_View: View {
     @ObservedObject private var TicketKind = Ticket()
@@ -19,33 +20,45 @@ struct Activity_Info_View: View {
     }
 
     var body: some View {
-        
-//        ZStack {
-//            HStack {
-//                Button(action: {
-//                    self.presentationMode.wrappedValue.dismiss()
-//                }){
-//                    Image(systemName: "arrow.backward")
-//                        .renderingMode(.template)
-//                        .foregroundColor(.white)
-//                        .font(.title)
-//                        .frame(width: 80, height: 80)
-//                }
-//
-//                Spacer()
-//            }
-//        }
-        
         ScrollView(.vertical, showsIndicators: false) {
             GeometryReader { reader in
                 if reader.frame(in: .global).minY > -480 {
-                    Image("paper")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .offset(y: -reader.frame(in: .global).minY)
-                        .frame(width: UIScreen.main.bounds.width, height:
-                                reader.frame(in: .global).minY > 0 ?
-                               reader.frame(in: .global).minY + 480 : 480)
+                    if let image = act_ViewModel.Image_Link,
+                       let url = URL(string: image)
+                    {
+                        URLImage(url: url,
+                                 options: URLImageOptions(
+                                    identifier: act_ViewModel.Id,
+                                    expireAfter: 600.0,
+                                    cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25)
+                                 ),
+                                 failure: { error, retry in
+                                    Image(systemName: "photo.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .offset(y: -reader.frame(in: .global).minY)
+                                        .frame(width: UIScreen.main.bounds.width, height:
+                                                reader.frame(in: .global).minY > 0 ?
+                                               reader.frame(in: .global).minY + 480 : 480)
+                                 },
+                                 content: { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .offset(y: -reader.frame(in: .global).minY)
+                                        .frame(width: UIScreen.main.bounds.width, height:
+                                                reader.frame(in: .global).minY > 0 ?
+                                               reader.frame(in: .global).minY + 480 : 480)
+                                 })
+                    }else{
+                        Image(systemName: "photo.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .offset(y: -reader.frame(in: .global).minY)
+                            .frame(width: UIScreen.main.bounds.width, height:
+                                    reader.frame(in: .global).minY > 0 ?
+                                   reader.frame(in: .global).minY + 480 : 480)
+                    }
                 }
             }
             .frame(height: 480)
@@ -57,26 +70,50 @@ struct Activity_Info_View: View {
                         .multilineTextAlignment(.center)
                     Spacer()
                 }
-                .padding(.horizontal, 22)
+                .padding(.horizontal, 16)
                 .padding(.bottom, 5)
 
                 HStack {
-                    Image("Logo")
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 45, height: 45)
-                        .shadow(color: .gray, radius: 3, x: 1, y: 1)
-                        
+                    if let image = act_ViewModel.GroupImage,
+                       let url = URL(string: image)
+                    {
+                        URLImage(url: url,
+                                 options: URLImageOptions(
+                                    identifier: act_ViewModel.Id,
+                                    expireAfter: 600.0,
+                                    cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25)
+                                 ),
+                                 failure: { error, retry in
+                                    Image(systemName: "photo.fill")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .clipShape(Circle())
+                                        .frame(width: 45, height: 45)
+                                        .shadow(color: .gray, radius: 3, x: 1, y: 1)
+                                 },
+                                 content: { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .clipShape(Circle())
+                                        .frame(width: 45, height: 45)
+                                        .shadow(color: .gray, radius: 3, x: 1, y: 1)
+                                 })
+                    }else{
+                        Image(systemName: "photo.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 45, height: 45)
+                            .shadow(color: .gray, radius: 3, x: 1, y: 1)
+                    }   
 
                     Text(act_ViewModel.GroupName)
                         .font(Font.custom("GenJyuuGothic-Regular", size: 18))
                         .multilineTextAlignment(.center)
                         .padding(.leading, 5)
                 }
-                .padding(.horizontal, 22)
-
-                Divider()
+                .padding(.horizontal, 14)
 
                 HStack {
                     Image("DateIcon")
@@ -89,7 +126,7 @@ struct Activity_Info_View: View {
                         .foregroundColor(Color.black)
                         .padding(.leading, 5)
                 }
-                .padding(.horizontal, 25)
+                .padding(.horizontal, 20)
 
                 HStack {
                     Image("LocationIcon")
@@ -103,11 +140,14 @@ struct Activity_Info_View: View {
                         .foregroundColor(Color.black)
                         .padding(.leading, 5)
                 }
-                .padding(.horizontal, 25)
+                .padding(.horizontal, 20)
 
                 Image("TestMap")
                     .resizable()
                     .scaledToFill()
+                
+                Divider()
+                    .padding(.top, 30)
                 
                 HStack {
                     Spacer()
@@ -126,6 +166,9 @@ struct Activity_Info_View: View {
                     .frame(width: UIScreen.main.bounds.width - 100, height: 300, alignment: .topLeading)
                     .padding(.top, 15)
                     .padding(.leading, 5)
+                
+                Divider()
+                    .padding(.bottom, 30)
             }
             .background(Color.white)
             .padding(.vertical, 20)

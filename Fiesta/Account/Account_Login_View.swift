@@ -11,8 +11,8 @@ import Combine
 struct Account_Login_View: View {
     @State var UserId: String = ""
     @State var Password: String = ""
-    @State var alert = false
-    @ObservedObject var viewModel = Account_Login_ViewModel()
+    @State private var State = false
+    @StateObject var viewModel = Account_Login_ViewModel()
     @GestureState private var dragOffset = CGSize.zero
     @Environment(\.presentationMode) var presentationMode
 
@@ -61,35 +61,28 @@ struct Account_Login_View: View {
                         if self.UserId != "" && self.Password != ""
                         {
                             self.viewModel.fetch_Account(UserId: self.UserId, Password: self.Password)
+                            self.State.toggle()
                         }
                     }) {
-                        Text("登入")
-                            .font(Font.custom("GenJyuuGothic-Bold", size: 14))
-                            .frame(width: 262, height: 40)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 1)
-                            )
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
+                        HStack {
+                            Spacer()
+                            
+                            Text("登入")
+                                .font(Font.custom("GenJyuuGothic-Bold", size: 14))
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                        }
+                        .frame(width: 262, height: 40)
                     }
+                    .frame(width: 262, height: 40)
+                    .background(Color.white.opacity(0.0))
                     .buttonStyle(PlainButtonStyle())
-
-                    NavigationLink(destination: EmptyView() /* School_Email_View() */ ) {
-                        Text("註冊")
-                            .bold()
-                            .foregroundColor(Color.white)
-                            .offset(x: 0, y: -12.5)
-                            .background(
-                                Image("ShortBtn")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 55, height: 55)
-                            )
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.top, 30)
-
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 1)
+                    )
                     Spacer()
                 }
                 Spacer()
@@ -105,6 +98,19 @@ struct Account_Login_View: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }))
+            .alert(isPresented: $State){ () -> Alert in
+                if viewModel.StatusMsg != ""
+                {
+                    return Alert(title: Text(viewModel.StatusMsg), dismissButton: .default(Text("OK"), action: {
+                        self.State.toggle()
+                        }))
+                }else{
+                    return Alert(title: Text("登入成功"), dismissButton: .default(Text("OK"), action: {
+                        self.State.toggle()
+                        self.presentationMode.wrappedValue.dismiss()
+                        }))
+                }
+            }
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)

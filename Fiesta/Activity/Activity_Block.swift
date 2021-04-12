@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Activity_Block: View {
     private let viewModel: Activity_ViewModel
     
     init(viewModel: Activity_ViewModel) {
         self.viewModel = viewModel
+        URLImageService.shared.cleanup()
     }
     
     var body: some View {
@@ -26,14 +28,46 @@ struct Activity_Block: View {
                             VStack(alignment: .center) {
                                 VStack(alignment: .leading) {
                                     HStack {
-                                        Image("Logo")
-                                            .resizable()
-                                            .scaledToFill()
-                                            .clipShape(Circle())
-                                            .frame(width: 45, height: 45)
-                                            .shadow(color: Color.gray.opacity(0.5), radius: 3, x: 1, y: 1)
-                                            .padding(.leading, 20)
-                                            .padding(.trailing, 5)
+                                        
+                                        if let image = viewModel.GroupImage,
+                                           let url = URL(string: image)
+                                        {
+                                            URLImage(url: url,
+                                                     options: URLImageOptions(
+                                                        identifier: viewModel.Id,
+                                                        expireAfter: 600.0,
+                                                        cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25)
+                                                     ),
+                                                     failure: { error, retry in
+                                                        Image(systemName: "photo.fill")
+                                                            .resizable()
+                                                            .scaledToFill()
+                                                            .clipShape(Circle())
+                                                            .frame(width: 45, height: 45)
+                                                            .shadow(color: Color.gray.opacity(0.5), radius: 3, x: 1, y: 1)
+                                                            .padding(.leading, 20)
+                                                            .padding(.trailing, 5)
+                                                     },
+                                                     content: { image in
+                                                        image
+                                                            .resizable()
+                                                            .scaledToFill()
+                                                            .clipShape(Circle())
+                                                            .frame(width: 45, height: 45)
+                                                            .shadow(color: Color.gray.opacity(0.5), radius: 3, x: 1, y: 1)
+                                                            .padding(.leading, 20)
+                                                            .padding(.trailing, 5)
+                                                     })
+                                        }else{
+                                            Image(systemName: "photo.fill")
+                                                .resizable()
+                                                .scaledToFill()
+                                                .clipShape(Circle())
+                                                .frame(width: 45, height: 45)
+                                                .shadow(color: Color.gray.opacity(0.5), radius: 3, x: 1, y: 1)
+                                                .padding(.leading, 20)
+                                                .padding(.trailing, 5)
+                                        }
 
                                         VStack(alignment: .leading) {
                                             Text(viewModel.GroupName)
@@ -49,20 +83,46 @@ struct Activity_Block: View {
                                         Spacer()
                                     }
                                 }
-
-                                Image("TextImg")
-                                    .resizable()
-                                    .renderingMode(.original)
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(15)
-                                    .padding(.horizontal, 20)
-                                    
+                                
+                                if let image = viewModel.Image_Link,
+                                   let url = URL(string: image)
+                                {
+                                    URLImage(url: url,
+                                             options: URLImageOptions(
+                                                identifier: viewModel.Id,
+                                                expireAfter: 600.0,
+                                                cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25)
+                                             ),
+                                             failure: { error, retry in
+                                                Image(systemName: "photo.fill")
+                                                    .renderingMode(.original)
+                                                    .foregroundColor(.white)
+                                                    .background(Color.gray)
+                                                    .cornerRadius(15)
+                                                    .padding(.horizontal, 20)
+                                             },
+                                             content: { image in
+                                                image
+                                                    .resizable()
+                                                    .renderingMode(.original)
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .cornerRadius(15)
+                                                    .padding(.horizontal, 20)
+                                             })
+                                }else{
+                                    Image(systemName: "photo.fill")
+                                        .renderingMode(.original)
+                                        .foregroundColor(.white)
+                                        .background(Color.gray)
+                                        .cornerRadius(15)
+                                        .padding(.horizontal, 20)
+                                }
 
                                 VStack(alignment: .leading) {
                                     HStack {
                                         VStack(alignment: .leading, spacing: 0) {
                                             HStack {
-                                                ForEach(0 ..< viewModel.Tags.count) { tag in
+                                                ForEach(0 ..< viewModel.Tags.count, id: \.self) { tag in
                                                     Text("#\(viewModel.Tags[tag])")
                                                         .font(Font.custom("GenJyuuGothic-Regular" ,size: 11))
                                                         .foregroundColor(Color.gray)
@@ -90,7 +150,6 @@ struct Activity_Block: View {
 
                                 Spacer()
                             }
-    //                        .frame(height: 330)
                             .padding(.vertical, 20)
                             .background(Color.white)
                             .cornerRadius(30)
@@ -102,10 +161,6 @@ struct Activity_Block: View {
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 15)
-
-    //                NavigationLink(destination: Activity_Info_View) {
-    //                    EmptyView()
-    //                }
                 }
                 Spacer()
             }

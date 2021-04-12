@@ -10,23 +10,30 @@ import Combine
 
 class Activity_Info_ViewModel: ObservableObject 
 {
-    private let fiestaService = ActivityService()
-    @Published var activityViewModel: [Activity_ViewModel] = []
+    private let Service = ActivityService()
+    var isLoading: Bool {
+        state == ResultStatus.loading
+    }
+    @Published var activityViewModel = [Activity_ViewModel]()
     @Published var json: [String: Any] = ["act_Id": ""]
+    @Published private(set) var state: ResultStatus = .loading
+    
 //    @Published var arrayJson: [String] = []
     var cancellable: AnyCancellable?
     
 //    Fetch Recommend Activity
     func fetch_Activity()
     {
-        cancellable = fiestaService.fetch_Activity(JSON: json, Path: "/Activity/getRecommend")
+        self.state = .loading
+        cancellable = Service.fetch_Activity(JSON: json, Path: "/Activity/getRecommend")
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { value in
                 switch value {
                 case .finished :
-                    print("OK Cool")
+                    self.state = .success
                 case .failure(let error):
                     print("Ganlinniagby by:\(error.localizedDescription)")
+                    self.state = .failed(error: error)
                 }
             },
             receiveValue: { [weak self] fiestaContainer in
@@ -55,6 +62,10 @@ struct Activity_ViewModel: Hashable {
     
     var Image_Link: String {
         return activity.Photo!
+    }
+    
+    var GroupImage: String {
+        return activity.groupPhoto!
     }
     
     var GroupName: String {

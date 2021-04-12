@@ -7,10 +7,11 @@
 
 import SwiftUI
 import Combine
+import URLImage
 
 struct Activity_Index_View: View {
     @State var show = false
-    @ObservedObject var viewModel = Activity_Info_ViewModel()
+    @StateObject var viewModel = Activity_Info_ViewModel()
     
     init()
     {
@@ -25,7 +26,6 @@ struct Activity_Index_View: View {
             ZStack {
                 Color.white
                 Activity_Content
-                
             }
             .navigationBarTitle("")
             .navigationBarTitleDisplayMode(.inline)
@@ -66,12 +66,17 @@ private extension Activity_Index_View
                     
                     ScrollView(.vertical, showsIndicators: false)
                     {
-                        LazyVGrid(columns: Array(repeating:GridItem(.flexible(), spacing: 0), count: 1))
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 1))
                         {
-                            if viewModel.activityViewModel.isEmpty {
-                                EmptySection
-                            }else{
+                            switch viewModel.state
+                            {
+                            case .failed:
+                                EmptySection() {
+                                    self.viewModel.fetch_Activity()
+                                }
+                            default:
                                 Activity_Section
+                                    .redacted(reason: viewModel.isLoading ? .placeholder: [])
                             }
                         }
                         .onAppear {
@@ -95,13 +100,31 @@ private extension Activity_Index_View
     }
     
     var Activity_Section: some View {
-        ForEach(viewModel.activityViewModel, id: \.self, content: Activity_Block.init(viewModel: ))
+            ForEach(viewModel.activityViewModel, id: \.self, content: Activity_Block.init(viewModel: ))
     }
 
-    var EmptySection: some View {
-        HStack(alignment: .center) {
-            Text("目前尚無活動喔！")
-                .foregroundColor(.gray)
+    struct EmptySection: View {
+        typealias EmptySectionAction = () -> Void
+        let Action: EmptySectionAction
+        
+        internal init(Action: @escaping EmptySection.EmptySectionAction)
+        {
+            self.Action = Action
+        }
+        
+        var body: some View {
+            HStack(alignment: .center) {
+                Text("目前尚無活動喔！")
+                    .foregroundColor(.gray)
+            }
         }
     }
+    
+    struct EmptySection_Previews: PreviewProvider {
+        static var previews: some View {
+            EmptySection() {}
+        }
+    }
+    
+    
 }

@@ -8,11 +8,68 @@
 import SwiftUI
 
 struct Menu: View {
+    @StateObject var viewModel = Account_Login_ViewModel()
     @Binding var show: Bool
     
     var body: some View {
         VStack {
-            Personal(show: self.$show)
+            VStack {
+                HStack {
+                    Button(action: {
+                        withAnimation(.default)
+                        {
+                            self.show.toggle()
+                        }
+                    })
+                    {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .foregroundColor(Color.white)
+                            .frame(width: 12, height: 20)
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                    }){
+                        Image(systemName: "square.and.pencil")
+                            .font(.title)
+                    }
+                }
+                .padding(.top)
+                .padding(.bottom, 25)
+        
+                NavigationLink(destination: Account_Login_View()) {
+                    HStack {
+                        Image("Header")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            
+                            Text("\(UserDefaults.standard.string(forKey: "NickName") ?? "")")
+                                .font(Font.custom("GenJyuuGothic-Bold", size: 26))
+                            
+                            Text("@\(UserDefaults.standard.string(forKey: "UserId") ?? "")")
+                                .font(Font.custom("GenJyuuGothic-Medium", size: 13))
+                                
+                        }
+                        
+                        .padding(.leading, 10)
+                        
+                        Spacer()
+                    }
+                }
+                
+                Divider()
+                    .padding(.top, 25)
+            }
+            .foregroundColor(Color.white)
+            .padding(.horizontal, 20)
+            .background(Color.orange.edgesIgnoringSafeArea(.all))
+            
             MenuItem()
             
             Spacer()
@@ -29,68 +86,6 @@ struct Menu: View {
         )
     }
 }
-
-struct Personal: View {
-    @Binding var show: Bool
-    var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    withAnimation(.default)
-                    {
-                        self.show.toggle()
-                    }
-                })
-                {
-                    Image(systemName: "chevron.backward")
-                        .resizable()
-                        .foregroundColor(Color.white)
-                        .frame(width: 12, height: 20)
-                }
-                
-                Spacer()
-                
-                Button(action: {
-                    
-                }){
-                    Image(systemName: "square.and.pencil")
-                        .font(.title)
-                }
-            }
-            .padding(.top)
-            .padding(.bottom, 25)
-    
-            NavigationLink(destination: Account_Login_View()) {
-                HStack {
-                    Image("Header")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("小毅")
-                            .font(Font.custom("GenJyuuGothic-Bold", size: 26))
-                        
-                        Text("@stance0102")
-                            .font(Font.custom("GenJyuuGothic-Medium", size: 13))
-                            
-                    }
-                    
-                    .padding(.leading, 10)
-                    
-                    Spacer()
-                }
-            }
-            
-            Divider()
-                .padding(.top, 25)
-        }
-        .foregroundColor(Color.white)
-        .padding(.horizontal, 20)
-        .background(Color.orange.edgesIgnoringSafeArea(.all))
-    }
-}
-
 
 struct MenuItem: View {
     var body: some View {

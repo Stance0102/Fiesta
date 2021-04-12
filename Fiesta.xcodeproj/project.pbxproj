@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,6 +44,8 @@
 		DE03BF0025F719E000EEF111 /* Pods_Fiesta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CD182BBB366F3C4E097A93 /* Pods_Fiesta.framework */; };
 		DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */; };
 		DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */; };
+		DE05602B2624B68C00082523 /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05602A2624B68C00082523 /* ResultStatus.swift */; };
+		DE27D50A2624A2500000DA6E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DE27D5092624A2500000DA6E /* URLImage */; };
 		DE3E335F261F3105007FDD09 /* Menu_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E335E261F3105007FDD09 /* Menu_View.swift */; };
 		DEC910A2261CEB3D009DE47E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC910A1261CEB3D009DE47E /* AccountService.swift */; };
 		DEC910A7261CEF44009DE47E /* Account_Login_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC910A6261CEF44009DE47E /* Account_Login_ViewModel.swift */; };
@@ -123,6 +125,7 @@
 		DE03BEDF25F5F9A500EEF111 /* GenJyuuGothic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Heavy.ttf"; sourceTree = "<group>"; };
 		DE03BF2025F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_RealTime_VIew.swift; sourceTree = "<group>"; };
 		DE03BF2525F7239200EEF111 /* Part_Activity_Ticket_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Activity_Ticket_View.swift; sourceTree = "<group>"; };
+		DE05602A2624B68C00082523 /* ResultStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStatus.swift; sourceTree = "<group>"; };
 		DE3E335E261F3105007FDD09 /* Menu_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_View.swift; sourceTree = "<group>"; };
 		DEC910A1261CEB3D009DE47E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		DEC910A6261CEF44009DE47E /* Account_Login_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_Login_ViewModel.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE27D50A2624A2500000DA6E /* URLImage in Frameworks */,
 				DE03BF0025F719E000EEF111 /* Pods_Fiesta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +330,7 @@
 		DEE49BEA2613981100D7FC55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE05602A2624B68C00082523 /* ResultStatus.swift */,
 				DEE49C1C261B731400D7FC55 /* ActivityService.swift */,
 				DEC910A1261CEB3D009DE47E /* AccountService.swift */,
 			);
@@ -360,6 +365,9 @@
 			dependencies = (
 			);
 			name = Fiesta;
+			packageProductDependencies = (
+				DE27D5092624A2500000DA6E /* URLImage */,
+			);
 			productName = Fiesta;
 			productReference = D420D12D255BFD04009D0513 /* Fiesta.app */;
 			productType = "com.apple.product-type.application";
@@ -434,6 +442,9 @@
 				Base,
 			);
 			mainGroup = D420D124255BFD03009D0513;
+			packageReferences = (
+				DE27D5082624A2500000DA6E /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = D420D12E255BFD04009D0513 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -613,6 +624,7 @@
 				D42EDFCE256861D1001D8B1B /* _Show.swift in Sources */,
 				DEE49C0626141E7C00D7FC55 /* Array+Filtering.swift in Sources */,
 				DE03BF2625F7239200EEF111 /* Part_Activity_Ticket_View.swift in Sources */,
+				DE05602B2624B68C00082523 /* ResultStatus.swift in Sources */,
 				DE03BF2125F7236C00EEF111 /* Part_Activity_RealTime_VIew.swift in Sources */,
 				D49B00DA255DB4E0004E87EE /* Account_LogOut_View.swift in Sources */,
 				DEE49C1D261B731400D7FC55 /* ActivityService.swift in Sources */,
@@ -963,6 +975,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE27D5082624A2500000DA6E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE27D5092624A2500000DA6E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE27D5082624A2500000DA6E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D420D125255BFD03009D0513 /* Project object */;
 }

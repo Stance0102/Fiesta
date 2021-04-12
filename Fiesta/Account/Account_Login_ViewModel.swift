@@ -10,16 +10,21 @@ import Combine
 
 class Account_Login_ViewModel: ObservableObject
 {
-    private let fiestaService = AccountService()
-    @Published var accountViewModel: [Account_ViewModel] = []
-    @Published var accountStatus: [Account_Status] = []
+    private let Service = AccountService()
+    @Published var accountViewModel = [Account_ViewModel]()
+    var isLoading: Bool {
+        state == ResultStatus.loading
+    }
+    @Published private(set) var state: ResultStatus = .loading
     @Published var UserId: String = ""
     @Published var Password: String = ""
     @Published var StatusMsg: String = ""
+    @Published var UserInfo = UserDefaults()
+    
     var cancellable: AnyCancellable?
     var cancelUpdate = Set<AnyCancellable>()
     
-//    Fetch Recommend Activity
+//    Fetch Account Info
     func fetch_Account(UserId userId: String, Password password: String)
     {
         let json: [String: Any] = [
@@ -27,14 +32,17 @@ class Account_Login_ViewModel: ObservableObject
             "userPassword": password
         ]
         
-        cancellable = fiestaService.fetch_Account(JSON: json, Path: "/Account/select")
+        self.state = .loading
+        cancellable = Service.fetch_Account(JSON: json, Path: "/Account/select")
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { value in
                 switch value {
                 case .finished :
-                    print("OK Cool")
+                    self.state = .success
+//                    print("Get it")
                 case .failure(let error) :
                     print("Ganlinniagby by:\(error.localizedDescription)")
+                    self.state = .failed(error: error)
                 }
             },
             receiveValue: { [weak self] fiestaContainer in
@@ -43,13 +51,14 @@ class Account_Login_ViewModel: ObservableObject
                     return
                 }
                 
-                self.accountStatus.removeAll()
-                self.accountStatus.insert((Account_Status(DataContainer_Account(code: fiestaContainer.code, result: fiestaContainer.result))), at: 0)
+                self.UserInfo.setValue(fiestaContainer.result[0]?.Id, forKey: "Id")
+                self.UserInfo.setValue(fiestaContainer.result[0]?.userId, forKey: "UserId")
+                self.UserInfo.setValue(fiestaContainer.result[0]?.userName, forKey: "UserName")
+                self.UserInfo.setValue(fiestaContainer.result[0]?.nickName, forKey: "NickName")
                 
-                switch(self.accountStatus[0].StatusCode)
+                switch(fiestaContainer.code)
                 {
                     case "001":
-                        self.accountViewModel = fiestaContainer.result.map { Account_ViewModel($0!) }
                         self.StatusMsg = ""
                     case "002":
                         self.StatusMsg = "帳號或密碼錯誤"
@@ -64,34 +73,7 @@ class Account_Login_ViewModel: ObservableObject
         )
     }
     
-    private var StatusUpdate: AnyPublisher<String, Never>
-    {
-        $StatusMsg
-            .debounce(for: 0.8, scheduler: RunLoop.main)
-            .removeDuplicates()
-            .map { $0 }
-            .eraseToAnyPublisher()
-    }
     
-    init() {
-        StatusUpdate
-            .receive(on: RunLoop.main)
-            .assign(to: \.StatusMsg, on: self)
-            .store(in: &cancelUpdate)
-    }
-}
-
-struct Account_Status: Hashable {
-    private let account_Status: DataContainer_Account
-    
-    var StatusCode: String {
-        return account_Status.code
-    }
-    
-    init(_ account_Status: DataContainer_Account)
-    {
-        self.account_Status = account_Status
-    }
 }
 
 struct Account_ViewModel: Hashable {
