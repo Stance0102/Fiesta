@@ -1,5 +1,5 @@
 //
-//  Account_Login_ViewModel.swift
+//  _Account_Login_ViewModel.swift
 //  Fiesta
 //
 //  Created by Stance Li on 2021/4/7.
@@ -22,14 +22,13 @@ class Account_Login_ViewModel: ObservableObject
     @Published var UserInfo = UserDefaults()
     
     var cancellable: AnyCancellable?
-    var cancelUpdate = Set<AnyCancellable>()
     
 //    Fetch Account Info
-    func fetch_Account(UserId userId: String, Password password: String)
+    func fetch_Account(UserId userId: String?, Password password: String?)
     {
         let json: [String: Any] = [
-            "userId": userId,
-            "userPassword": password
+            "userId": userId!,
+            "userPassword": password!
         ]
         
         self.state = .loading
@@ -54,7 +53,10 @@ class Account_Login_ViewModel: ObservableObject
                 self.UserInfo.setValue(fiestaContainer.result[0]?.Id, forKey: "Id")
                 self.UserInfo.setValue(fiestaContainer.result[0]?.userId, forKey: "UserId")
                 self.UserInfo.setValue(fiestaContainer.result[0]?.userName, forKey: "UserName")
+                self.UserInfo.setValue(password!, forKey: "Password")
+                self.UserInfo.setValue(fiestaContainer.result[0]?.Mail_1, forKey: "Email_1")
                 self.UserInfo.setValue(fiestaContainer.result[0]?.nickName, forKey: "NickName")
+                self.UserInfo.setValue(fiestaContainer.result[0]?.token, forKey: "Token")
                 
                 switch(fiestaContainer.code)
                 {

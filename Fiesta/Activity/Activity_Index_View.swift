@@ -12,6 +12,7 @@ import URLImage
 struct Activity_Index_View: View {
     @State var show = false
     @StateObject var viewModel = Activity_Info_ViewModel()
+    @StateObject var Account_ViewModel = Account_Login_ViewModel()
     
     init()
     {
@@ -82,6 +83,10 @@ private extension Activity_Index_View
                         .onAppear {
                             UITableView.appearance().separatorStyle = .none
                             self.viewModel.fetch_Activity()
+                            if UserDefaults.standard.value(forKey: "Token") == nil
+                            {
+//                                AutoLogin()
+                            }
                         }
                     }
                 }
@@ -126,5 +131,17 @@ private extension Activity_Index_View
         }
     }
     
-    
+    func AutoLogin()
+    {
+        let UserId: String = UserDefaults.standard.value(forKey: "UserId") as! String
+        let Password: String = UserDefaults.standard.value(forKey: "Password") as! String
+        self.Account_ViewModel.fetch_Account(UserId: UserId, Password: Password)
+        
+        if Account_ViewModel.state == .success
+        {
+            print(UserDefaults.standard.value(forKey: "Token")!)
+        }else{
+            AutoLogin()
+        }
+    }
 }
